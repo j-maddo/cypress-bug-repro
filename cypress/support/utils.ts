@@ -1,7 +1,11 @@
 
 export function readImageFileToString(fileName: string, alias: string): void {
-    
-    cy.readFile(fileName, 'base64').then((file: string) => {
-     
-    }).as(alias);
+    // cy.log(fileName, "file in readImage")
+    // cy.readFile(fileName, 'base64').then((file: string) => {
+    //     cy.log(`Length of image '${alias}': ${file.length}`);
+    // }).as(alias);
+    cy.readFile(fileName, 'base64').as('myAlias');
+    cy.get('@myAlias').then(file => {
+        console.log(file)
+    })
 }
