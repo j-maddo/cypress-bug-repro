@@ -25,7 +25,7 @@ Then('readfile by alias should work', () => {
             // compare two screenshot files
             cy.get('@file1').then(file1 => {
                 cy.get('@file2').then(file2 => {
-                    // expect(file1).not.to.be.null;
+                    expect(file1).not.to.be.null;
                      expect(file2).not.to.be.null;
                 });
             });  
